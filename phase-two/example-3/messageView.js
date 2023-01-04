@@ -15,9 +15,9 @@ class MessageView {
   displayMessage() {
     console.log('Thanks for clicking me!');
 
-    let messageEl = document.createElement('div');
+    const messageEl = document.createElement('div');
     messageEl.id = 'message';
-    messageEl.textContent = 'This message displayed by JavaScript';
+    messageEl.textContent = document.querySelector('#message-input').value;
 
     document.querySelector('#main-container').append(messageEl);
   }

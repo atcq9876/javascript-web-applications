@@ -10,11 +10,14 @@ describe('MessageView', () => {
     document.body.innerHTML = fs.readFileSync('./index.html');
 
     const view = new MessageView();
+    const inputEL = document.querySelector('#message-input');
+    inputEL.value = 'Test input value';
 
-    const buttonEl = document.querySelector('#show-message-button');
-    buttonEl.click();
+    const showMessagebuttonEl = document.querySelector('#show-message-button');
+    showMessagebuttonEl.click();
 
     expect(document.querySelector('#message')).not.toBeNull();
+    expect(document.querySelector('#message').textContent).toBe('Test input value');
   });
 
   it('clicks the "hide message" button and removes the message', () => {
